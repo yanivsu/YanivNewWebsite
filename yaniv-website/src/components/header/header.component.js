@@ -77,13 +77,14 @@ export default function Header() {
         <Typography variant="h6" className={classes.title}>
           {enums.YANIV_SURIYANO}
         </Typography>
-
-        <Button className={classes.typoButton}>Home</Button>
         <Button className={classes.typoButton}>About</Button>
         <Button className={classes.typoButton}>Services</Button>
         <Button className={classes.typoButton}>Experience</Button>
         <Button className={classes.typoButton}>Works</Button>
         <Button className={classes.typoButton}>Contact</Button>
+        <Typography>
+          {weather.name} {weather.tempature}&deg;
+        </Typography>
       </Toolbar>
     </AppBar>
   );

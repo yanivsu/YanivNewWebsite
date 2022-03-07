@@ -7,6 +7,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import "./App.css";
 import Header from "./components/header/header.component";
 import Home from "./components/home/home.component";
+import About from "./components/about/about.component";
 
 function App() {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
@@ -37,6 +38,7 @@ function App() {
       <CssBaseline />
       <Header />
       <Home />
+      <About />
     </ThemeProvider>
   );
 }

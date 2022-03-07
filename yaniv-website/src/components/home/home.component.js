@@ -13,9 +13,12 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import EmailIcon from "@material-ui/icons/Email";
 
+import "./home.css";
+
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: "50vh",
+    height: "85vh",
+    margin: "0px",
   },
   avatarGrid: {
     margin: theme.spacing(5),
@@ -41,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
       color: "#EAC94D", //yellow
     },
   },
+
   hireMe: {
     width: "7%",
     borderRadius: "14px",
@@ -52,6 +56,9 @@ const useStyles = makeStyles((theme) => ({
       color: "#F54053", //yellow
     },
   },
+  scrollDown: {
+    margin: theme.spacing(0, 0, 20, 0),
+  },
   "@keyframes pulse": {
     "0%": {
       boxShadow: "#FF69B4 0 0 0 0",
@@ -61,35 +68,51 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
+
 function Home() {
   const classes = useStyles();
 
   return (
-    <Grid
-      container
-      direction="column"
-      justifyContent="center"
-      alignItems="center"
-      className={classes.root}
-    >
-      <Grid item className={classes.avatarGrid}>
-        <Avatar className={classes.avatar}>YS</Avatar>
+    <Grid container>
+      <Grid
+        container
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+        className={classes.root}
+      >
+        <Grid item className={classes.avatarGrid}>
+          <Avatar className={classes.avatar}>YS</Avatar>
+        </Grid>
+        <Grid item>
+          <Typography variant="h4" className={classes.typo4}>
+            Yaniv Suriyano
+          </Typography>
+        </Grid>
+        <Grid item>
+          <Typography variant="h6">Full-Stack Software Engineer.</Typography>
+        </Grid>
+        <Grid item className={classes.socialNetwork}>
+          <FacebookIcon fontSize="large" className={classes.icon} />
+          <InstagramIcon fontSize="large" className={classes.icon} />
+          <LinkedInIcon fontSize="large" className={classes.icon} />
+          <EmailIcon fontSize="large" className={classes.icon} />
+        </Grid>
+        <Button className={classes.hireMe}>Hire Me!</Button>
       </Grid>
-      <Grid item>
-        <Typography variant="h4" className={classes.typo4}>
-          Yaniv Suriyano
-        </Typography>
+      <Grid
+        className={classes.scrollDown}
+        container
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <a
+          class="ca3-scroll-down-link ca3-scroll-down-arrow"
+          data-ca3_iconfont="ETmodules"
+          data-ca3_icon=""
+        ></a>
       </Grid>
-      <Grid item>
-        <Typography variant="h6">Full-Stack Software Engineer.</Typography>
-      </Grid>
-      <Grid item className={classes.socialNetwork}>
-        <FacebookIcon fontSize="large" className={classes.icon} />
-        <InstagramIcon fontSize="large" className={classes.icon} />
-        <LinkedInIcon fontSize="large" className={classes.icon} />
-        <EmailIcon fontSize="large" className={classes.icon} />
-      </Grid>
-      <Button className={classes.hireMe}>Hire Me!</Button>
     </Grid>
   );
 }
