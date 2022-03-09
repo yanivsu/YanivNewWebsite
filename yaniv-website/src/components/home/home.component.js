@@ -13,6 +13,8 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import EmailIcon from "@material-ui/icons/Email";
 
+import profileImage from "../../styles/profilePicture.jpeg";
+
 import "./home.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -45,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 
-  hireMe: {
+  contactMe: {
     width: "7%",
     borderRadius: "14px",
     margin: theme.spacing(2, 0, 0, 0),
@@ -56,9 +58,11 @@ const useStyles = makeStyles((theme) => ({
       color: "#F54053", //yellow
     },
   },
+
   scrollDown: {
     margin: theme.spacing(0, 0, 20, 0),
   },
+
   "@keyframes pulse": {
     "0%": {
       boxShadow: "#FF69B4 0 0 0 0",
@@ -82,7 +86,7 @@ function Home() {
         className={classes.root}
       >
         <Grid item className={classes.avatarGrid}>
-          <Avatar className={classes.avatar}>YS</Avatar>
+          <Avatar src={profileImage} className={classes.avatar}></Avatar>
         </Grid>
         <Grid item>
           <Typography variant="h4" className={classes.typo4}>
@@ -98,7 +102,7 @@ function Home() {
           <LinkedInIcon fontSize="large" className={classes.icon} />
           <EmailIcon fontSize="large" className={classes.icon} />
         </Grid>
-        <Button className={classes.hireMe}>Hire Me!</Button>
+        <Button className={classes.contactMe}>Contact Me!</Button>
       </Grid>
       <Grid
         className={classes.scrollDown}

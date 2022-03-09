@@ -22,6 +22,7 @@ function App() {
           },
         },
         typography: {
+          fontFamily: "Rubik",
           body1: {
             color: "white",
           },
