@@ -8,6 +8,7 @@ import "./App.css";
 import Header from "./components/header/header.component";
 import Home from "./components/home/home.component";
 import About from "./components/about/about.component";
+import Skills from "./components/skills/skills.component";
 
 function App() {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
@@ -26,6 +27,12 @@ function App() {
           body1: {
             color: "white",
           },
+          h2: {
+            color: "#2D2A46",
+          },
+          h5: {
+            color: "#2D2A46",
+          },
           h6: {
             color: "white",
           },
@@ -40,6 +47,7 @@ function App() {
       <Header />
       <Home />
       <About />
+      <Skills />
     </ThemeProvider>
   );
 }
