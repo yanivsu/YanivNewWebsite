@@ -14,3 +14,16 @@ export const PERSONAL_INFO = "Personal Info";
 export const ABOUT_ME_COLLECTION = "aboutMe";
 export const SKILLS_COLLECTION = "skills";
 export const SKILLS = "Skills";
+
+export const EXPERIENCE = "Experience";
+export const EDUICATION = "Education";
+export const EDUICATION_ABOUT =
+  "Bachelor of Science in Software Engineering at Ort Braude College.";
+
+export const GENERIX = "Generix Software";
+export const GENERIX_ABOUT = "CRM Software Developer.";
+export const GENERIX_YEARS = "2019 - 2020.";
+
+export const SKYSOFT = "SkySoft Solutions";
+export const SKYSOFT_ABOUT = `Full-Stack Engineer.`;
+export const SKYSOFT_YEARS = "2020 - Present.";

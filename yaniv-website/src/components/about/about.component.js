@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
+import { getFirestore } from "firebase/firestore/lite";
 
 import { Card, Grid, makeStyles, Typography } from "@material-ui/core";
 import CardContent from "@material-ui/core/CardContent";
@@ -75,18 +75,18 @@ function About() {
       alignItems="center"
     >
       <Grid item>
-        <Typography className={classes.typo} variant="h4">
+        {/* <Typography className={classes.typo} variant="h4">
           {enums.ABOUT_ME}
-        </Typography>
+        </Typography> */}
         <img src={profileImage} className={classes.avatar} />
       </Grid>
       <Card className={classes.card}>
         <CardContent>
           <Grid container>
             <Grid item lg={7}>
-              <Typography variant="h2">{enums.PERSONAL_INFO}</Typography>
+              <Typography variant="h2">{enums.ABOUT_ME}</Typography>
             </Grid>
-            <Typography variant="h2">{enums.ABOUT_ME}:</Typography>
+            {/* <Typography variant="h2">{enums.ABOUT_ME}:</Typography> */}
           </Grid>
           <Grid container alignItems="center" justifyContent="space-between">
             <Grid
@@ -119,7 +119,9 @@ function About() {
               </Grid>
             </Grid>
             <Grid item xs={5}>
-              <Typography variant="h5">{aboutMe.description}</Typography>
+              <Typography variant="h6" style={{ color: "#2D2A46" }}>
+                {aboutMe.description}
+              </Typography>
             </Grid>
           </Grid>
         </CardContent>

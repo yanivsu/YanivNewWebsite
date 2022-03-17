@@ -9,6 +9,7 @@ import Header from "./components/header/header.component";
 import Home from "./components/home/home.component";
 import About from "./components/about/about.component";
 import Skills from "./components/skills/skills.component";
+import Experience from "./components/experience/experience.component";
 
 function App() {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
@@ -48,6 +49,7 @@ function App() {
       <Home />
       <About />
       <Skills />
+      <Experience />
     </ThemeProvider>
   );
 }

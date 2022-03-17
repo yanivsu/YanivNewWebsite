@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 
-import { DialogTitle, Grid, makeStyles, Typography } from "@material-ui/core";
+import { Grid, makeStyles, Typography } from "@material-ui/core";
 
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
@@ -18,7 +18,6 @@ Chart.register(...registerables);
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // height: "50vh",
     backgroundColor: "#F0F0F5",
   },
   avatar: {
@@ -35,7 +34,6 @@ const useStyles = makeStyles((theme) => ({
   },
   skills: {
     margin: theme.spacing(1),
-    // backgroundColor: "blue",
   },
 }));
 
