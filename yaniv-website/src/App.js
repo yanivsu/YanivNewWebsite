@@ -23,6 +23,22 @@ function App() {
             main: prefersDarkMode ? "#7165F2" : "#2C9CEF",
           },
         },
+        missingOppositeContent: {
+          "&:before": {
+            content: '""',
+            flex: 1,
+            padding: "6px 16px",
+          },
+        },
+        overrides: {
+          MuiTimelineItem: {
+            missingOppositeContent: {
+              "&:before": {
+                display: "none",
+              },
+            },
+          },
+        },
         typography: {
           fontFamily: "Rubik",
           body1: {

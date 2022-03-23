@@ -21,9 +21,12 @@ export const EDUICATION_ABOUT =
   "Bachelor of Science in Software Engineering at Ort Braude College.";
 
 export const GENERIX = "Generix Software";
-export const GENERIX_ABOUT = "CRM Software Developer.";
-export const GENERIX_YEARS = "2019 - 2020.";
+export const GENERIX_ABOUT =
+  "CRM Software Developer. Work most of the time on the backend side with Asp.Net";
+export const GENERIX_YEARS = "2019 - 2020";
 
 export const SKYSOFT = "SkySoft Solutions";
-export const SKYSOFT_ABOUT = `Full-Stack Engineer.`;
-export const SKYSOFT_YEARS = "2020 - Present.";
+export const SKYSOFT_ABOUT = `Full-Stack Engineer. Work with React, Redux, NodeJs, MongoDB, Material-UI, GoJs`;
+export const SKYSOFT_YEARS = "2020 - Present";
+
+export const GPA = "82.5";

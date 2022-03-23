@@ -113,9 +113,6 @@ function About() {
                 <Typography variant="h6" style={{ color: "#2D2A46" }}>
                   Email: {aboutMe.email}
                 </Typography>
-                <Typography variant="h6" style={{ color: "#2D2A46" }}>
-                  {/* Age: {getAge(aboutMe.birthday?.toDate())} */}
-                </Typography>
               </Grid>
             </Grid>
             <Grid item xs={5}>
@@ -126,7 +123,7 @@ function About() {
           </Grid>
         </CardContent>
       </Card>
-      {/* <Button className={classes.downloadCV}>Download CV</Button> */}
+      <Grid item></Grid>
     </Grid>
   );
 }

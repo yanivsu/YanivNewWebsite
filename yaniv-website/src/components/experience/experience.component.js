@@ -25,8 +25,8 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(10),
-    maxWidth: "350px",
-
+    width: "250px",
+    height: "150px",
     backgroundColor: "#F0F0F5",
   },
   card: {
@@ -55,59 +55,63 @@ function Experience() {
       <Grid
         container
         alignItems="center"
-        direction="column"
+        justifyContent="center"
+        direction="row"
         className={classes.root2}
       >
-        <Typography variant="h2">{enums.EXPERIENCE}</Typography>
         <img src={experienceAvatar} className={classes.avatar} />
-
         <Card className={classes.card}>
           <CardContent>
-            <Grid container justifyContent="center" alignItems="center">
-              <Grid item container>
-                <Timeline className={classes.timeline} align="left">
-                  <TimelineItem>
-                    <TimelineSeparator>
-                      <TimelineDot color="primary">
-                        <WorkIcon />
-                      </TimelineDot>
-                      <TimelineConnector />
-                    </TimelineSeparator>
-                    <TimelineContent>
-                      <Paper elevation={2} className={classes.paper}>
+            <Grid
+              container
+              justifyContent="space-between"
+              alignItems="flext-start"
+              direction="row"
+            >
+              <Grid item style={{ backgroundColor: "" }}>
+                <Grid item>
+                  <Typography variant="h2">{enums.EXPERIENCE}</Typography>
+                </Grid>
+                <Grid item lg={10}>
+                  <Timeline className={classes.timeline} align="left">
+                    <TimelineItem>
+                      <TimelineSeparator>
+                        <TimelineDot color="primary">
+                          <WorkIcon />
+                        </TimelineDot>
+                        <TimelineConnector />
+                      </TimelineSeparator>
+                      <TimelineContent>
                         <Typography
                           variant="h6"
                           style={{ color: "#2D2A46", textAlign: "start" }}
                         >
-                          {enums.SKYSOFT}
+                          {enums.SKYSOFT} ({enums.SKYSOFT_YEARS}).
                         </Typography>
                         <Typography
+                          component="p"
                           style={{ color: "#2D2A46", textAlign: "start" }}
                         >
                           {enums.SKYSOFT_ABOUT}
                         </Typography>
                         <Typography
                           style={{ color: "#2D2A46", textAlign: "start" }}
-                        >
-                          {enums.SKYSOFT_YEARS}
-                        </Typography>
-                      </Paper>
-                    </TimelineContent>
-                  </TimelineItem>
-                  <TimelineItem>
-                    <TimelineSeparator>
-                      <TimelineDot color="primary">
-                        <WorkIcon />
-                      </TimelineDot>
-                      <TimelineConnector />
-                    </TimelineSeparator>
-                    <TimelineContent>
-                      <Paper elevation={2} className={classes.paper}>
+                        ></Typography>
+                      </TimelineContent>
+                    </TimelineItem>
+                    <TimelineItem>
+                      <TimelineSeparator>
+                        <TimelineDot color="primary">
+                          <WorkIcon />
+                        </TimelineDot>
+                        <TimelineConnector />
+                      </TimelineSeparator>
+                      <TimelineContent>
                         <Typography
                           variant="h6"
                           style={{ color: "#2D2A46", textAlign: "start" }}
                         >
-                          {enums.GENERIX}
+                          {enums.GENERIX} ({enums.GENERIX_YEARS}).
                         </Typography>
                         <Typography
                           style={{ color: "#2D2A46", textAlign: "start" }}
@@ -116,21 +120,17 @@ function Experience() {
                         </Typography>
                         <Typography
                           style={{ color: "#2D2A46", textAlign: "start" }}
-                        >
-                          {enums.GENERIX_YEARS}
-                        </Typography>
-                      </Paper>
-                    </TimelineContent>
-                  </TimelineItem>
-                  <TimelineItem>
-                    <TimelineSeparator>
-                      <TimelineDot color="primary">
-                        <SchoolIcon />
-                      </TimelineDot>
-                      <TimelineConnector />
-                    </TimelineSeparator>
-                    <TimelineContent>
-                      <Paper elevation={3} className={classes.paper}>
+                        ></Typography>
+                      </TimelineContent>
+                    </TimelineItem>
+                    <TimelineItem>
+                      <TimelineSeparator>
+                        <TimelineDot color="primary">
+                          <SchoolIcon />
+                        </TimelineDot>
+                        <TimelineConnector />
+                      </TimelineSeparator>
+                      <TimelineContent>
                         <Typography
                           variant="h6"
                           component="h1"
@@ -143,10 +143,10 @@ function Experience() {
                         >
                           {enums.EDUICATION_ABOUT}
                         </Typography>
-                      </Paper>
-                    </TimelineContent>
-                  </TimelineItem>
-                </Timeline>
+                      </TimelineContent>
+                    </TimelineItem>
+                  </Timeline>
+                </Grid>
               </Grid>
             </Grid>
           </CardContent>
