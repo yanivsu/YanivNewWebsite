@@ -1,5 +1,4 @@
-import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
+import { collection, getDocs } from "firebase/firestore/lite";
 
 export const getData = async (db, collectionName) => {
   const col = collection(db, collectionName);

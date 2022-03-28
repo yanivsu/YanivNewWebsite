@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-import { Card, Grid, makeStyles, Paper, Typography } from "@material-ui/core";
+import { Card, Grid, makeStyles, Typography } from "@material-ui/core";
 import Timeline from "@material-ui/lab/Timeline";
 import TimelineItem from "@material-ui/lab/TimelineItem";
 import TimelineSeparator from "@material-ui/lab/TimelineSeparator";
@@ -11,10 +11,13 @@ import CardContent from "@material-ui/core/CardContent";
 import SchoolIcon from "@material-ui/icons/School";
 import WorkIcon from "@material-ui/icons/Work";
 
-import * as fb from "../../config";
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore/lite";
+
 import * as enums from "../../helprs/enums";
-import * as fbFuncs from "../../helprs/firebaseFunctions";
 import experienceAvatar from "../../styles/experienceAvatar.png";
+import * as fbFuncs from "../../helprs/firebaseFunctions";
+import * as fb from "../../config";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -50,6 +53,21 @@ const useStyles = makeStyles((theme) => ({
 
 function Experience() {
   const classes = useStyles();
+  const [experienceData, setExperienceData] = useState(undefined);
+
+  useEffect(async () => {
+    const appConfig = initializeApp(fb.firebaseConfig);
+    const db = getFirestore(appConfig);
+    const experienceFB = await fbFuncs.getData(db, enums.EXPERIENCE_COLLECTION);
+    var experienceFBArray = Object.keys(experienceFB).map((key) => {
+      return experienceFB[key];
+    });
+    experienceFBArray.sort((a, b) => {
+      return b.index - a.index;
+    });
+    setExperienceData(experienceFBArray);
+  }, []);
+
   return (
     <Grid container className={classes.root}>
       <Grid
@@ -63,43 +81,86 @@ function Experience() {
         <Card className={classes.card}>
           <CardContent>
             <Grid
+              item
               container
+              lg={12}
               justifyContent="space-between"
-              alignItems="flext-start"
-              direction="row"
+              alignItems="center"
             >
               <Grid item style={{ backgroundColor: "" }}>
-                <Grid item>
+                <Grid item container>
                   <Typography variant="h2">{enums.EXPERIENCE}</Typography>
                 </Grid>
-                <Grid item lg={10}>
+                <Grid item lg={12}>
                   <Timeline className={classes.timeline} align="left">
-                    <TimelineItem>
-                      <TimelineSeparator>
-                        <TimelineDot color="primary">
-                          <WorkIcon />
-                        </TimelineDot>
-                        <TimelineConnector />
-                      </TimelineSeparator>
-                      <TimelineContent>
-                        <Typography
-                          variant="h6"
-                          style={{ color: "#2D2A46", textAlign: "start" }}
-                        >
-                          {enums.SKYSOFT} ({enums.SKYSOFT_YEARS}).
-                        </Typography>
-                        <Typography
-                          component="p"
-                          style={{ color: "#2D2A46", textAlign: "start" }}
-                        >
-                          {enums.SKYSOFT_ABOUT}
-                        </Typography>
-                        <Typography
-                          style={{ color: "#2D2A46", textAlign: "start" }}
-                        ></Typography>
-                      </TimelineContent>
-                    </TimelineItem>
-                    <TimelineItem>
+                    {experienceData &&
+                      experienceData.map((value, index) => {
+                        if (index === 2) {
+                          return (
+                            <TimelineItem>
+                              <TimelineSeparator>
+                                <TimelineDot color="primary">
+                                  <SchoolIcon />
+                                </TimelineDot>
+                                <TimelineConnector />
+                              </TimelineSeparator>
+                              <TimelineContent>
+                                <Typography
+                                  variant="h6"
+                                  component="h1"
+                                  style={{
+                                    color: "#2D2A46",
+                                    textAlign: "start",
+                                  }}
+                                >
+                                  {enums.EDUICATION} {value.years}
+                                </Typography>
+                                <Typography
+                                  style={{
+                                    color: "#2D2A46",
+                                    textAlign: "start",
+                                  }}
+                                >
+                                  {value.about}
+                                </Typography>
+                              </TimelineContent>
+                            </TimelineItem>
+                          );
+                        } else {
+                          return (
+                            <TimelineItem>
+                              <TimelineSeparator>
+                                <TimelineDot color="primary">
+                                  <WorkIcon />
+                                </TimelineDot>
+                                <TimelineConnector />
+                              </TimelineSeparator>
+                              <TimelineContent>
+                                <Typography
+                                  variant="h6"
+                                  style={{
+                                    color: "#2D2A46",
+                                    textAlign: "start",
+                                  }}
+                                >
+                                  {value.name} {value.years}.
+                                </Typography>
+                                <Typography
+                                  component="p"
+                                  style={{
+                                    color: "#2D2A46",
+                                    textAlign: "start",
+                                  }}
+                                >
+                                  {value.about}
+                                </Typography>
+                              </TimelineContent>
+                            </TimelineItem>
+                          );
+                        }
+                      })}
+
+                    {/* <TimelineItem>
                       <TimelineSeparator>
                         <TimelineDot color="primary">
                           <WorkIcon />
@@ -122,29 +183,7 @@ function Experience() {
                           style={{ color: "#2D2A46", textAlign: "start" }}
                         ></Typography>
                       </TimelineContent>
-                    </TimelineItem>
-                    <TimelineItem>
-                      <TimelineSeparator>
-                        <TimelineDot color="primary">
-                          <SchoolIcon />
-                        </TimelineDot>
-                        <TimelineConnector />
-                      </TimelineSeparator>
-                      <TimelineContent>
-                        <Typography
-                          variant="h6"
-                          component="h1"
-                          style={{ color: "#2D2A46", textAlign: "start" }}
-                        >
-                          {enums.EDUICATION}
-                        </Typography>
-                        <Typography
-                          style={{ color: "#2D2A46", textAlign: "start" }}
-                        >
-                          {enums.EDUICATION_ABOUT}
-                        </Typography>
-                      </TimelineContent>
-                    </TimelineItem>
+                    </TimelineItem> */}
                   </Timeline>
                 </Grid>
               </Grid>

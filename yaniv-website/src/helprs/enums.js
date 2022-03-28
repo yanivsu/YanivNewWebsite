@@ -16,6 +16,7 @@ export const SKILLS_COLLECTION = "skills";
 export const SKILLS = "Skills";
 
 export const EXPERIENCE = "Experience";
+export const EXPERIENCE_COLLECTION = "experoence";
 export const EDUICATION = "Education";
 export const EDUICATION_ABOUT =
   "Bachelor of Science in Software Engineering at Ort Braude College.";
@@ -30,3 +31,4 @@ export const SKYSOFT_ABOUT = `Full-Stack Engineer. Work with React, Redux, NodeJ
 export const SKYSOFT_YEARS = "2020 - Present";
 
 export const GPA = "82.5";
+export const YEARS = "Years:";

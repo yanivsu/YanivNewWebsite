@@ -3,7 +3,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Grid, makeStyles, Typography } from "@material-ui/core";
 
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
+import { getFirestore } from "firebase/firestore/lite";
 
 import { Chart, registerables } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
