@@ -4,13 +4,13 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
-import "./App.css";
 import Header from "./components/header/header.component";
 import Home from "./components/home/home.component";
 import About from "./components/about/about.component";
 import Skills from "./components/skills/skills.component";
 import Experience from "./components/experience/experience.component";
 import CV from "./components/CV/cv.component";
+import { Element } from "react-scroll";
 
 function App() {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
@@ -64,9 +64,13 @@ function App() {
       <CssBaseline />
       <Header />
       <Home />
+      <Element name="About" />
       <About />
+      <Element name="Skills" />
       <Skills />
+      <Element name="Experience" />
       <Experience />
+      <Element name="CV" />
       <CV />
     </ThemeProvider>
   );

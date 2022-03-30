@@ -12,10 +12,12 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import EmailIcon from "@material-ui/icons/Email";
+import GitHubIcon from "@material-ui/icons/GitHub";
 
 import profileImage from "../../styles/profilePicture.jpeg";
 
 import "./home.css";
+import { Link } from "react-scroll";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -97,12 +99,46 @@ function Home() {
           <Typography variant="h6">Full-Stack Software Engineer.</Typography>
         </Grid>
         <Grid item className={classes.socialNetwork}>
-          <FacebookIcon fontSize="large" className={classes.icon} />
-          <InstagramIcon fontSize="large" className={classes.icon} />
-          <LinkedInIcon fontSize="large" className={classes.icon} />
-          <EmailIcon fontSize="large" className={classes.icon} />
+          <a
+            target="_blank"
+            href="https://www.facebook.com/yaniv.suriyano/"
+            style={{ color: "inherit" }}
+          >
+            <FacebookIcon fontSize="large" className={classes.icon} />
+          </a>
+          <a
+            target="_blank"
+            href="https://www.instagram.com/yanivsu/"
+            style={{ color: "inherit" }}
+          >
+            <InstagramIcon fontSize="large" className={classes.icon} />
+          </a>
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/yaniv-suriyano-9153bb140/"
+            style={{ color: "inherit" }}
+          >
+            <LinkedInIcon fontSize="large" className={classes.icon} />
+          </a>
+          <a
+            target="_blank"
+            href="https://github.com/yanivsu"
+            style={{ color: "inherit" }}
+          >
+            <GitHubIcon fontSize="large" className={classes.icon} />
+          </a>
+          <a href="mailto:yanivsu@gmail.com">
+            <EmailIcon fontSize="large" className={classes.icon} />
+          </a>
         </Grid>
-        <Button className={classes.contactMe}>Contact Me!</Button>
+        <Button
+          className={classes.contactMe}
+          onClick={() => {
+            window.location = "mailto:yanivsu@gmail.com";
+          }}
+        >
+          Contact Me!
+        </Button>
       </Grid>
       <Grid
         className={classes.scrollDown}
@@ -111,11 +147,19 @@ function Home() {
         justifyContent="center"
         alignItems="center"
       >
-        <a
-          className="ca3-scroll-down-link ca3-scroll-down-arrow"
-          data-ca3_iconfont="ETmodules"
-          data-ca3_icon=""
-        ></a>
+        <Link
+          activeClass="active"
+          to="CV"
+          spy={true}
+          smooth={true}
+          duration={500}
+        >
+          <a
+            className="ca3-scroll-down-link ca3-scroll-down-arrow"
+            data-ca3_iconfont="ETmodules"
+            data-ca3_icon=""
+          ></a>
+        </Link>
       </Grid>
     </Grid>
   );

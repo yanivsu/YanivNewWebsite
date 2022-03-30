@@ -1,4 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
+import {
+  Link,
+  DirectLink,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+  ScrollLink,
+} from "react-scroll";
+
 import axios from "axios";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -6,8 +17,6 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
 
 import * as enums from "../../helprs/enums";
 
@@ -77,11 +86,42 @@ export default function Header() {
         <Typography variant="h6" className={classes.title}>
           {enums.YANIV_SURIYANO}
         </Typography>
-        <Button className={classes.typoButton}>About</Button>
-        <Button className={classes.typoButton}>Services</Button>
-        <Button className={classes.typoButton}>Experience</Button>
-        <Button className={classes.typoButton}>Works</Button>
-        <Button className={classes.typoButton}>Contact</Button>
+        <Link
+          activeClass="active"
+          to="About"
+          spy={true}
+          smooth={true}
+          duration={500}
+        >
+          <Button className={classes.typoButton}>About</Button>
+        </Link>
+        <Link
+          activeClass="active"
+          to="Experience"
+          spy={true}
+          smooth={true}
+          duration={500}
+        >
+          <Button className={classes.typoButton}>Skills</Button>
+        </Link>
+        <Link
+          activeClass="active"
+          to="Experience"
+          spy={true}
+          smooth={true}
+          duration={500}
+        >
+          <Button className={classes.typoButton}>Experience</Button>
+        </Link>
+        <Link
+          activeClass="active"
+          to="CV"
+          spy={true}
+          smooth={true}
+          duration={500}
+        >
+          <Button className={classes.typoButton}>CV</Button>
+        </Link>
         <Typography>
           {weather.name} {weather.tempature}&deg;
         </Typography>
