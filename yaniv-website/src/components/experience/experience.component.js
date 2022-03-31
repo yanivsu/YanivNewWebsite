@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 import { Card, Grid, makeStyles, Typography } from "@material-ui/core";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+
 import Timeline from "@material-ui/lab/Timeline";
 import TimelineItem from "@material-ui/lab/TimelineItem";
 import TimelineSeparator from "@material-ui/lab/TimelineSeparator";
@@ -25,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
   },
   root2: {
     marginTop: theme.spacing(25),
+  },
+  root3: {
+    marginTop: theme.spacing(2),
   },
   paper: {
     padding: theme.spacing(10),
@@ -54,6 +59,7 @@ const useStyles = makeStyles((theme) => ({
 function Experience() {
   const classes = useStyles();
   const [experienceData, setExperienceData] = useState(undefined);
+  const largeScreen = useMediaQuery((theme) => theme.breakpoints.up("md"));
 
   useEffect(async () => {
     const appConfig = initializeApp(fb.firebaseConfig);
@@ -74,8 +80,8 @@ function Experience() {
         container
         alignItems="center"
         justifyContent="center"
-        direction="row"
-        className={classes.root2}
+        direction={largeScreen ? "row" : "column"}
+        className={largeScreen ? classes.root2 : classes.root3}
       >
         <img src={experienceAvatar} className={classes.avatar} />
         <Card className={classes.card}>
@@ -97,7 +103,7 @@ function Experience() {
                       experienceData.map((value, index) => {
                         if (index === 2) {
                           return (
-                            <TimelineItem>
+                            <TimelineItem key={index}>
                               <TimelineSeparator>
                                 <TimelineDot color="primary">
                                   <SchoolIcon />
@@ -128,7 +134,7 @@ function Experience() {
                           );
                         } else {
                           return (
-                            <TimelineItem>
+                            <TimelineItem key={index}>
                               <TimelineSeparator>
                                 <TimelineDot color="primary">
                                   <WorkIcon />
@@ -159,31 +165,6 @@ function Experience() {
                           );
                         }
                       })}
-
-                    {/* <TimelineItem>
-                      <TimelineSeparator>
-                        <TimelineDot color="primary">
-                          <WorkIcon />
-                        </TimelineDot>
-                        <TimelineConnector />
-                      </TimelineSeparator>
-                      <TimelineContent>
-                        <Typography
-                          variant="h6"
-                          style={{ color: "#2D2A46", textAlign: "start" }}
-                        >
-                          {enums.GENERIX} ({enums.GENERIX_YEARS}).
-                        </Typography>
-                        <Typography
-                          style={{ color: "#2D2A46", textAlign: "start" }}
-                        >
-                          {enums.GENERIX_ABOUT}
-                        </Typography>
-                        <Typography
-                          style={{ color: "#2D2A46", textAlign: "start" }}
-                        ></Typography>
-                      </TimelineContent>
-                    </TimelineItem> */}
                   </Timeline>
                 </Grid>
               </Grid>

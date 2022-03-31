@@ -14,7 +14,6 @@ import { Element } from "react-scroll";
 
 function App() {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-
   const theme = React.useMemo(
     () =>
       createTheme({

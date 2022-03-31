@@ -95,6 +95,7 @@ function Skills() {
           container
           item
           lg={12}
+          // xs={6}
           direction="row"
           alignItems="center"
           justifyContent="space-between"
@@ -119,6 +120,8 @@ function Skills() {
                   item
                   container
                   lg={4}
+                  xs={4}
+                  key={key}
                 >
                   <div
                     style={{

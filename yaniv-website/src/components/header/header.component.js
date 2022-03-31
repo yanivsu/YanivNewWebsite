@@ -1,24 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
-import {
-  Link,
-  DirectLink,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-  ScrollLink,
-} from "react-scroll";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 import axios from "axios";
 
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 
 import * as enums from "../../helprs/enums";
+import DrawerComponent from "./drawerHeader.component";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
   typoButton: {
     fontWeight: "bold",
-    margin: theme.spacing(0, 5, 0, 5),
+    // margin: theme.spacing(0, 5, 0, 5),
     "&:hover": {
       color: "#EAC94D", //yellow
     },
@@ -38,6 +31,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Header() {
   const location = useRef({ long: 34.855499, lat: 32.109333 }); // Tel Aviv, ISR location
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   const [weather, setWeahter] = useState({
     name: undefined,
     tempature: undefined,
@@ -81,51 +77,55 @@ export default function Header() {
   }, []);
 
   return (
-    <AppBar position="static" style={{ backgroundColor: "transparent" }}>
-      <Toolbar>
-        <Typography variant="h6" className={classes.title}>
-          {enums.YANIV_SURIYANO}
-        </Typography>
-        <Link
-          activeClass="active"
-          to="About"
-          spy={true}
-          smooth={true}
-          duration={500}
-        >
-          <Button className={classes.typoButton}>About</Button>
-        </Link>
-        <Link
-          activeClass="active"
-          to="Experience"
-          spy={true}
-          smooth={true}
-          duration={500}
-        >
-          <Button className={classes.typoButton}>Skills</Button>
-        </Link>
-        <Link
-          activeClass="active"
-          to="Experience"
-          spy={true}
-          smooth={true}
-          duration={500}
-        >
-          <Button className={classes.typoButton}>Experience</Button>
-        </Link>
-        <Link
-          activeClass="active"
-          to="CV"
-          spy={true}
-          smooth={true}
-          duration={500}
-        >
-          <Button className={classes.typoButton}>CV</Button>
-        </Link>
-        <Typography>
-          {weather.name} {weather.tempature}&deg;
-        </Typography>
-      </Toolbar>
+    <AppBar position="static" style={{ backgroundColor: "#2D2A46" }}>
+      {isMobile ? (
+        <DrawerComponent />
+      ) : (
+        <Toolbar>
+          <Typography variant="h6" className={classes.title}>
+            {enums.YANIV_SURIYANO}
+          </Typography>
+          <Link
+            activeClass="active"
+            to="About"
+            spy={true}
+            smooth={true}
+            duration={500}
+          >
+            <Button className={classes.typoButton}>About</Button>
+          </Link>
+          <Link
+            activeClass="active"
+            to="Skills"
+            spy={true}
+            smooth={true}
+            duration={500}
+          >
+            <Button className={classes.typoButton}>Skills</Button>
+          </Link>
+          <Link
+            activeClass="active"
+            to="Experience"
+            spy={true}
+            smooth={true}
+            duration={500}
+          >
+            <Button className={classes.typoButton}>Experience</Button>
+          </Link>
+          <Link
+            activeClass="active"
+            to="CV"
+            spy={true}
+            smooth={true}
+            duration={500}
+          >
+            <Button className={classes.typoButton}>CV</Button>
+          </Link>
+          <Typography>
+            {weather.name} {weather.tempature}&deg;
+          </Typography>
+        </Toolbar>
+      )}
     </AppBar>
   );
 }

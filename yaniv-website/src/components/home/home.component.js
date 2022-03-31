@@ -50,8 +50,9 @@ const useStyles = makeStyles((theme) => ({
   },
 
   contactMe: {
-    width: "7%",
+    // minWidth: "15",
     borderRadius: "14px",
+    // padding: theme.spacing(1.5),
     margin: theme.spacing(2, 0, 0, 0),
     textTransform: "none",
     fontSize: "20px",
@@ -148,17 +149,18 @@ function Home() {
         alignItems="center"
       >
         <Link
+          as=""
           activeClass="active"
-          to="CV"
+          to="About"
           spy={true}
           smooth={true}
           duration={500}
         >
-          <a
+          <span
             className="ca3-scroll-down-link ca3-scroll-down-arrow"
             data-ca3_iconfont="ETmodules"
             data-ca3_icon=""
-          ></a>
+          ></span>
         </Link>
       </Grid>
     </Grid>

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 
-import { Grid, makeStyles, Typography } from "@material-ui/core";
+import { Button, Grid, makeStyles } from "@material-ui/core";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import { initializeApp } from "firebase/app";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
@@ -28,12 +29,25 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     marginTop: theme.spacing(2),
   },
+  downloadCV: {
+    borderRadius: "14px",
+    margin: theme.spacing(2, 0, 0, 0),
+    textTransform: "none",
+    fontSize: "20px",
+    backgroundColor: "#F54053", //red
+    "&:hover": {
+      color: "#EAC94D", //yellow
+      backgroundColor: "#F54053",
+    },
+  },
 }));
 
 function CV() {
   const classes = useStyles();
   const myRef = useRef();
   const isVisible = useIsVisible(myRef);
+  const largeScreen = useMediaQuery((theme) => theme.breakpoints.up("md"));
+  const cvLink = useRef(undefined);
   useEffect(() => {
     const appConfig = initializeApp(fb.firebaseConfig);
     const storage = getStorage(appConfig);
@@ -45,6 +59,7 @@ function CV() {
         xhr.onload = (event) => {
           const blob = xhr.response;
         };
+        cvLink.current = url;
         xhr.open("GET", url);
         xhr.send();
 
@@ -66,19 +81,39 @@ function CV() {
         alignItems="center"
         justifyContent="space-around"
       >
-        <Grid>
+        <Grid innerRef={myRef}>
           <img src={cvPicture} className={classes.avatar} />
         </Grid>
         <Grid>
-          <img id="cvImg" style={{ backgroundColor: "white", scale: "1.5" }} />
+          {largeScreen ? (
+            <img
+              id="cvImg"
+              style={{ backgroundColor: "white", scale: "1.2" }}
+            />
+          ) : (
+            <Button
+              className={classes.downloadCV}
+              onClick={() => {
+                const link = document.createElement("a");
+                link.href = cvLink.current;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+            >
+              Download CV
+            </Button>
+          )}
         </Grid>
-        <Grid innerRef={myRef}>
-          <img
-            src={cvPicture}
-            className={classes.avatar}
-            style={{ transform: "scaleX(-1)" }}
-          />
-        </Grid>
+        {largeScreen ? (
+          <Grid>
+            <img
+              src={cvPicture}
+              className={classes.avatar}
+              style={{ transform: "scaleX(-1)" }}
+            />
+          </Grid>
+        ) : null}
       </Grid>
     </>
   );

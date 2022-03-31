@@ -5,7 +5,6 @@ import { getFirestore } from "firebase/firestore/lite";
 
 import { Card, Grid, makeStyles, Typography } from "@material-ui/core";
 import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
 
 import profileImage from "../../styles/aboutMe.png";
 import * as fb from "../../config";
@@ -86,10 +85,10 @@ function About() {
             <Grid item lg={7}>
               <Typography variant="h2">{enums.ABOUT_ME}</Typography>
             </Grid>
-            {/* <Typography variant="h2">{enums.ABOUT_ME}:</Typography> */}
           </Grid>
           <Grid container alignItems="center" justifyContent="space-between">
             <Grid
+              item
               lg={6}
               container
               alignItems="flex-start"
@@ -115,7 +114,7 @@ function About() {
                 </Typography>
               </Grid>
             </Grid>
-            <Grid item xs={5}>
+            <Grid item xs={12} md={5}>
               <Typography variant="h6" style={{ color: "#2D2A46" }}>
                 {aboutMe.description}
               </Typography>
