@@ -77,7 +77,7 @@ function About() {
         {/* <Typography className={classes.typo} variant="h4">
           {enums.ABOUT_ME}
         </Typography> */}
-        <img src={profileImage} className={classes.avatar} />
+        <img src={profileImage} className={classes.avatar} alt="avatar" />
       </Grid>
       <Card className={classes.card}>
         <CardContent>

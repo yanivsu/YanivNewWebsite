@@ -88,7 +88,7 @@ function Skills() {
     >
       <Grid item innerRef={myRef}>
         <Typography variant="h2">{enums.SKILLS}</Typography>
-        <img src={skillsAvatar} className={classes.avatar} />
+        <img src={skillsAvatar} className={classes.avatar} alt="avatar" />
       </Grid>
       {isVisible && (
         <Grid

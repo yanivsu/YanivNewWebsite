@@ -53,15 +53,7 @@ function CV() {
     const storage = getStorage(appConfig);
     getDownloadURL(ref(storage, "CV/Yaniv Suriyano CV ENG.pdf"))
       .then((url) => {
-        // This can be downloaded directly:
-        const xhr = new XMLHttpRequest();
-        xhr.responseType = "blob";
-        xhr.onload = (event) => {
-          const blob = xhr.response;
-        };
         cvLink.current = url;
-        xhr.open("GET", url);
-        xhr.send();
 
         // Or inserted into an <img> element
         const img = document.getElementById("cvImg");
@@ -82,11 +74,12 @@ function CV() {
         justifyContent="space-around"
       >
         <Grid innerRef={myRef}>
-          <img src={cvPicture} className={classes.avatar} />
+          <img src={cvPicture} className={classes.avatar} alt="avatar" />
         </Grid>
         <Grid>
           {largeScreen ? (
             <img
+              alt="CV File"
               id="cvImg"
               style={{ backgroundColor: "white", scale: "1.2" }}
             />
@@ -108,6 +101,7 @@ function CV() {
         {largeScreen ? (
           <Grid>
             <img
+              alt="CVFile"
               src={cvPicture}
               className={classes.avatar}
               style={{ transform: "scaleX(-1)" }}

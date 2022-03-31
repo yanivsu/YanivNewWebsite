@@ -83,7 +83,7 @@ function Experience() {
         direction={largeScreen ? "row" : "column"}
         className={largeScreen ? classes.root2 : classes.root3}
       >
-        <img src={experienceAvatar} className={classes.avatar} />
+        <img src={experienceAvatar} className={classes.avatar} alt="avatar" />
         <Card className={classes.card}>
           <CardContent>
             <Grid

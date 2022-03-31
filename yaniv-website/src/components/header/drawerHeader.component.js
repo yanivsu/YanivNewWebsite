@@ -7,7 +7,7 @@ import {
   ListItemText,
   makeStyles,
 } from "@material-ui/core";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 import MenuIcon from "@material-ui/icons/Menu";
 
