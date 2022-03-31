@@ -1,6 +1,6 @@
 {
   "name": "yaniv-website",
-  "homepage": "https://yanivsu.github.io/",
+  "homepage": "https://yanivsu.github.io/yaniv-website",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
