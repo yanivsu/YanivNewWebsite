@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
