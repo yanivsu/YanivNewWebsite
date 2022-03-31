@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/yaniv-website/static/css/main.67520f58.css",
-    "main.js": "/yaniv-website/static/js/main.c64e75b4.js",
+    "main.js": "/yaniv-website/static/js/main.0e189514.js",
     "static/media/cvPicture.png": "/yaniv-website/static/media/cvPicture.c58164e65b6aa7369795.png",
     "static/media/skillsAvatar.png": "/yaniv-website/static/media/skillsAvatar.407cfce5524440f34c2f.png",
     "static/media/experienceAvatar.png": "/yaniv-website/static/media/experienceAvatar.23e89465bfe87265fad0.png",
@@ -10,10 +10,10 @@
     "static/media/backgroundVector.svg": "/yaniv-website/static/media/backgroundVector.4689ba16644fbb7324a8.svg",
     "index.html": "/yaniv-website/index.html",
     "main.67520f58.css.map": "/yaniv-website/static/css/main.67520f58.css.map",
-    "main.c64e75b4.js.map": "/yaniv-website/static/js/main.c64e75b4.js.map"
+    "main.0e189514.js.map": "/yaniv-website/static/js/main.0e189514.js.map"
   },
   "entrypoints": [
     "static/css/main.67520f58.css",
-    "static/js/main.c64e75b4.js"
+    "static/js/main.0e189514.js"
   ]
 }
