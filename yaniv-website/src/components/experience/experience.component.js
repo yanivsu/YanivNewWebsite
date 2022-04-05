@@ -42,6 +42,11 @@ const useStyles = makeStyles((theme) => ({
     width: "50%",
     margin: theme.spacing(0, 0, 10, 6),
     boxShadow: "3px 3px 3px 3px gray",
+    // For Mobile
+    [theme.breakpoints.down("xs")]: {
+      width: "90%",
+      margin: theme.spacing(5, 0, 5, 0),
+    },
   },
 
   avatar: {

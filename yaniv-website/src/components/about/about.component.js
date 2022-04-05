@@ -16,6 +16,10 @@ const useStyles = makeStyles((theme) => ({
   root: {
     height: "50vh",
     backgroundColor: "#F0F0F5",
+    // For Mobile
+    [theme.breakpoints.down("xs")]: {
+      height: "100%",
+    },
   },
   typo: {
     color: "#2D2A46",
@@ -26,23 +30,17 @@ const useStyles = makeStyles((theme) => ({
     width: "50%",
     marginLeft: theme.spacing(6),
     boxShadow: "3px 3px 3px 3px gray",
+    // For Mobile
+    [theme.breakpoints.down("xs")]: {
+      width: "90%",
+      margin: theme.spacing(5, 0, 5, 0),
+    },
   },
   avatar: {
     width: theme.spacing(25),
     height: theme.spacing(25),
     color: "white ",
     marginLeft: theme.spacing(-1),
-  },
-  downloadCV: {
-    width: "30%",
-    borderRadius: "14px",
-    margin: theme.spacing(2, 0, 0, 0),
-    textTransform: "none",
-    fontSize: "20px",
-    backgroundColor: "#F54053", //red
-    "&:hover": {
-      color: "#F54053", //yellow
-    },
   },
 }));
 
@@ -73,10 +71,7 @@ function About() {
       justifyContent="center"
       alignItems="center"
     >
-      <Grid item>
-        {/* <Typography className={classes.typo} variant="h4">
-          {enums.ABOUT_ME}
-        </Typography> */}
+      <Grid item alignItems="center" justifyContent="center">
         <img src={profileImage} className={classes.avatar} alt="avatar" />
       </Grid>
       <Card className={classes.card}>
@@ -122,7 +117,6 @@ function About() {
           </Grid>
         </CardContent>
       </Card>
-      <Grid item></Grid>
     </Grid>
   );
 }

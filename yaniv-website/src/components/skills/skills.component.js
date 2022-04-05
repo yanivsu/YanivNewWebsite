@@ -35,6 +35,14 @@ const useStyles = makeStyles((theme) => ({
   skills: {
     margin: theme.spacing(1),
   },
+  doughnut: {
+    width: "150px",
+    margin: "20px",
+    [theme.breakpoints.down("xs")]: {
+      width: "90%",
+      margin: theme.spacing(2, 0, 5, 0),
+    },
+  },
 }));
 
 function Skills() {
@@ -120,15 +128,10 @@ function Skills() {
                   item
                   container
                   lg={4}
-                  xs={4}
+                  xs={5}
                   key={key}
                 >
-                  <div
-                    style={{
-                      width: "150px",
-                      margin: "20px",
-                    }}
-                  >
+                  <div className={classes.doughnut}>
                     <Doughnut
                       data={tempDataSet}
                       plugins={centerDoughnutPlugin}

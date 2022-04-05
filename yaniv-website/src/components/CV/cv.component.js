@@ -19,6 +19,11 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#F0F0F5",
     height: "150vh",
   },
+  root2: {
+    [theme.breakpoints.down("sm")]: {
+      margin: theme.spacing(5, 0, 5, 0),
+    },
+  },
   avatar: {
     width: theme.spacing(25),
     height: theme.spacing(25),
@@ -59,7 +64,7 @@ function CV() {
       .then((url) => {
         cvLink.current = url;
         const img = document.getElementById("cvImg");
-        img.setAttribute("src", cvLink.current);
+        img.setAttribute("src", url);
       })
       .catch((err) => {
         console.log(err);
@@ -73,13 +78,21 @@ function CV() {
         className={classes.root}
         container
         alignItems="center"
-        justifyContent="space-between"
-        lg={12}
+        justifyContent="space-around"
       >
         <Grid innerRef={myRef} item>
           <img src={cvPicture} className={classes.avatar} alt="avatar" />
         </Grid>
-        <Grid item container lg={8} alignItems="center" justifyContent="center">
+        <Grid
+          item
+          container={largeScreen}
+          lg={8}
+          // sm={6}
+          // xs={6}
+          alignItems="center"
+          justifyContent="center"
+          className={classes.root2}
+        >
           {largeScreen ? (
             <img
               alt="CV File"
@@ -91,18 +104,20 @@ function CV() {
               }}
             />
           ) : (
-            <Button
-              className={classes.downloadCV}
-              onClick={() => {
-                const link = document.createElement("a");
-                link.href = cvLink.current;
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-              }}
-            >
-              Download CV
-            </Button>
+            <Grid item>
+              <Button
+                className={classes.downloadCV}
+                onClick={() => {
+                  const link = document.createElement("a");
+                  link.href = cvLink.current;
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
+              >
+                Download CV
+              </Button>
+            </Grid>
           )}
         </Grid>
         {largeScreen ? (
