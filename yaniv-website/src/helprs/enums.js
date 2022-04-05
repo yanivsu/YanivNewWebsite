@@ -1,5 +1,5 @@
 export const WHEATHER_ADDRESS =
-  "http://api.openweathermap.org/data/2.5/weather?";
+  "https://api.openweathermap.org/data/2.5/weather?";
 export const WHEATER_API_KEY = "00797fe03a7a26bd2113ff2ced5af960";
 export const WHEATHER_UNITS = "&units=metric";
 

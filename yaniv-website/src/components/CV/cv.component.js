@@ -11,11 +11,13 @@ import cvPicture from "../../styles/cvPicture.png";
 import * as fb from "../../config";
 import Realistic from "./confetti.component";
 import useIsVisible from "../../helprs/genericFunctions";
+import { Document } from "react-pdf";
+import { textAlign, width } from "@material-ui/system";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: "#F0F0F5",
-    height: "100vh",
+    height: "150vh",
   },
   avatar: {
     width: theme.spacing(25),
@@ -51,16 +53,16 @@ function CV() {
   useEffect(() => {
     const appConfig = initializeApp(fb.firebaseConfig);
     const storage = getStorage(appConfig);
-    getDownloadURL(ref(storage, "CV/Yaniv Suriyano CV ENG.pdf"))
+
+    const pathReference = ref(storage, "images/stars.jpg");
+    getDownloadURL(ref(storage, "CV/yanivSuriyanoCV.jpg"))
       .then((url) => {
         cvLink.current = url;
-
-        // Or inserted into an <img> element
         const img = document.getElementById("cvImg");
-        img.setAttribute("src", url);
+        img.setAttribute("src", cvLink.current);
       })
       .catch((err) => {
-        console.err(err);
+        console.log(err);
       });
   }, []);
 
@@ -71,17 +73,22 @@ function CV() {
         className={classes.root}
         container
         alignItems="center"
-        justifyContent="space-around"
+        justifyContent="space-between"
+        lg={12}
       >
-        <Grid innerRef={myRef}>
+        <Grid innerRef={myRef} item>
           <img src={cvPicture} className={classes.avatar} alt="avatar" />
         </Grid>
-        <Grid>
+        <Grid item container lg={8} alignItems="center" justifyContent="center">
           {largeScreen ? (
             <img
               alt="CV File"
               id="cvImg"
-              style={{ backgroundColor: "white", scale: "1.2" }}
+              style={{
+                backgroundColor: "white",
+                width: "65%",
+                textAlign: "center",
+              }}
             />
           ) : (
             <Button
@@ -99,7 +106,7 @@ function CV() {
           )}
         </Grid>
         {largeScreen ? (
-          <Grid>
+          <Grid item>
             <img
               alt="CVFile"
               src={cvPicture}

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import { HashRouter, Route, Router, BrowserRouter } from "react-router-dom";
+import { Route, BrowserRouter, Switch } from "react-router-dom";
 
 import App from "./App";
 import "./index.css";
@@ -14,8 +14,10 @@ import "./index.css";
 // );
 
 ReactDOM.render(
-  <BrowserRouter basename={process.env.PUBLIC_URL}>
-    <App />
+  <BrowserRouter basename="/yaniv-website">
+    <Switch>
+      <Route path="" component={App} exact />
+    </Switch>
   </BrowserRouter>,
   document.getElementById("root")
 );
