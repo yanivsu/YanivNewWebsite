@@ -18,9 +18,9 @@ function App() {
     () =>
       createTheme({
         palette: {
-          type: prefersDarkMode ? "dark" : "light",
+          type: prefersDarkMode ? "light" : "light",
           primary: {
-            main: prefersDarkMode ? "#7165F2" : "#2C9CEF",
+            main: prefersDarkMode ? "#2D2A46" : "#2D2A46",
           },
         },
         missingOppositeContent: {
@@ -46,6 +46,9 @@ function App() {
           },
           h2: {
             color: "#2D2A46",
+          },
+          h4: {
+            color: "white",
           },
           h5: {
             color: "#2D2A46",

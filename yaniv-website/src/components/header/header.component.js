@@ -19,8 +19,10 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+    color: "white",
   },
   typoButton: {
+    color: "white",
     fontWeight: "bold",
     // margin: theme.spacing(0, 5, 0, 5),
     "&:hover": {

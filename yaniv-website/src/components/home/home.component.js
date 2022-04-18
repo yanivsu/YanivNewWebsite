@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3, 0, 0, 0),
   },
   icon: {
+    color: "white",
     margin: theme.spacing(0, 1, 0, 1),
     cursor: "pointer",
     "&:hover": {
@@ -52,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
   contactMe: {
     // minWidth: "15",
     borderRadius: "14px",
+    color: "white",
     // padding: theme.spacing(1.5),
     margin: theme.spacing(2, 0, 0, 0),
     textTransform: "none",
