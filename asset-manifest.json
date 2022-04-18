@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/YanivNewWebsite/static/css/main.ab32897a.css",
-    "main.js": "/YanivNewWebsite/static/js/main.fdcea9cd.js",
+    "main.js": "/YanivNewWebsite/static/js/main.57ca9ad7.js",
     "static/media/cvPicture.png": "/YanivNewWebsite/static/media/cvPicture.c58164e65b6aa7369795.png",
     "static/media/skillsAvatar.png": "/YanivNewWebsite/static/media/skillsAvatar.407cfce5524440f34c2f.png",
     "static/media/experienceAvatar.png": "/YanivNewWebsite/static/media/experienceAvatar.23e89465bfe87265fad0.png",
@@ -10,10 +10,10 @@
     "static/media/backgroundVector.svg": "/YanivNewWebsite/static/media/backgroundVector.4689ba16644fbb7324a8.svg",
     "index.html": "/YanivNewWebsite/index.html",
     "main.ab32897a.css.map": "/YanivNewWebsite/static/css/main.ab32897a.css.map",
-    "main.fdcea9cd.js.map": "/YanivNewWebsite/static/js/main.fdcea9cd.js.map"
+    "main.57ca9ad7.js.map": "/YanivNewWebsite/static/js/main.57ca9ad7.js.map"
   },
   "entrypoints": [
     "static/css/main.ab32897a.css",
-    "static/js/main.fdcea9cd.js"
+    "static/js/main.57ca9ad7.js"
   ]
 }
