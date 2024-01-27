@@ -1,0 +1,15 @@
+.avatar-container {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 20px;
+}
+
+.skill-card-container {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 15px;
+  row-gap: 25px;
+}
