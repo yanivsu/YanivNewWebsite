@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/YanivNewWebsite/static/css/main.ab32897a.css",
-    "main.js": "/YanivNewWebsite/static/js/main.b87dffc0.js",
+    "main.css": "/YanivNewWebsite/static/css/main.1d3e8abf.css",
+    "main.js": "/YanivNewWebsite/static/js/main.e2ca2008.js",
     "static/media/cvPicture.png": "/YanivNewWebsite/static/media/cvPicture.c58164e65b6aa7369795.png",
     "static/media/skillsAvatar.png": "/YanivNewWebsite/static/media/skillsAvatar.407cfce5524440f34c2f.png",
     "static/media/experienceAvatar.png": "/YanivNewWebsite/static/media/experienceAvatar.23e89465bfe87265fad0.png",
@@ -9,11 +9,11 @@
     "static/media/aboutMe.png": "/YanivNewWebsite/static/media/aboutMe.7c14c8f714c265228f8d.png",
     "static/media/backgroundVector.svg": "/YanivNewWebsite/static/media/backgroundVector.4689ba16644fbb7324a8.svg",
     "index.html": "/YanivNewWebsite/index.html",
-    "main.ab32897a.css.map": "/YanivNewWebsite/static/css/main.ab32897a.css.map",
-    "main.b87dffc0.js.map": "/YanivNewWebsite/static/js/main.b87dffc0.js.map"
+    "main.1d3e8abf.css.map": "/YanivNewWebsite/static/css/main.1d3e8abf.css.map",
+    "main.e2ca2008.js.map": "/YanivNewWebsite/static/js/main.e2ca2008.js.map"
   },
   "entrypoints": [
-    "static/css/main.ab32897a.css",
-    "static/js/main.b87dffc0.js"
+    "static/css/main.1d3e8abf.css",
+    "static/js/main.e2ca2008.js"
   ]
 }
