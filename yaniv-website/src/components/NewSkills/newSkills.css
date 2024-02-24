@@ -1,0 +1,25 @@
+.avatar-container {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 20px;
+}
+
+.skill-card-container {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 15px;
+  row-gap: 25px;
+}
+
+/* Media query for small screens (e.g., iPhone 12) */
+@media (max-width: 100px) {
+  .skill-card-container:first-child {
+    display: none; /* Hide content for large screens */
+  }
+  .skill-card-container:last-child {
+    display: block; /* Show content for small screens */
+  }
+}

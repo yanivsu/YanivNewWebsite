@@ -7,9 +7,9 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Header from "./components/header/header.component";
 import Home from "./components/home/home.component";
 import About from "./components/about/about.component";
-import Skills from "./components/skills/skills.component";
 import Experience from "./components/experience/experience.component";
 import CV from "./components/CV/cv.component";
+import NewSkills from "./components/NewSkills/newSkills.component";
 import { Element } from "react-scroll";
 
 function App() {
@@ -68,7 +68,7 @@ function App() {
       <Element name="About" />
       <About />
       <Element name="Skills" />
-      <Skills />
+      <NewSkills />
       <Element name="Experience" />
       <Experience />
       <Element name="CV" />
