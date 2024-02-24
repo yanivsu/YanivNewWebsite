@@ -11,8 +11,6 @@ import cvPicture from "../../styles/cvPicture.png";
 import * as fb from "../../config";
 import Realistic from "./confetti.component";
 import useIsVisible from "../../helprs/genericFunctions";
-import { Document } from "react-pdf";
-import { textAlign, width } from "@material-ui/system";
 
 const useStyles = makeStyles((theme) => ({
   root: {

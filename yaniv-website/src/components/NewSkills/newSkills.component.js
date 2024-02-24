@@ -1,14 +1,16 @@
 import React from "react";
-import { Grid, Typography } from "@material-ui/core";
+import { Typography, useMediaQuery, useTheme } from "@material-ui/core";
 
 import "./newSkills.css";
 import useStyles from "../../customHooks/useStyles";
-import useFetch from "../../customHooks/useFetchBrandFetch";
 import SkillCard from "../SkillCard/skillCard.component";
 import skillsAvatar from "../../styles/skillsAvatar.png";
 import * as enums from "../../helprs/enums";
 
 const NewSkills = () => {
+  const theme = useTheme();
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg")); // lg breakpoint for large screens
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md")); // md breakpoint for small screens (e.g., iPhone 12)
   const apiUrls = [
     "https://api.brandfetch.io/v2/brands/redux.js.org",
     "https://api.brandfetch.io/v2/brands/nestjs.com",
