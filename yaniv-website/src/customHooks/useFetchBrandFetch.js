@@ -12,7 +12,7 @@ const useFetch = ({ url, auth = true }) => {
         headers: {
           accept: "application/json",
           Authorization: auth
-            ? "Bearer JkFyNTzR0KvKZrzXK27ON3YRyUhtknnR+CY8zhE2pjM="
+            ? "Bearer CR3AQMtwgbowaG9zdJaQ8WcYrNgH5Ftuapfffc7XxKk="
             : false,
         },
       };
