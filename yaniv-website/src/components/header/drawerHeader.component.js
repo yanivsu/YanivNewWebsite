@@ -37,7 +37,7 @@ function DrawerComponent() {
         open={openDrawer}
         onClose={() => setOpenDrawer(false)}
       >
-        <List>
+        <List style={{ backgroundColor: "#2D2A46" }}>
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
               <Link
